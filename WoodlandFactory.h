@@ -1,7 +1,7 @@
 #ifndef WOODLANDFACTORY_H
 #define WOODLANDFACTORY_H
 #include "Infantry.h"
-#include "Calvary.h"
+#include "Cavalry.h"
 #include "Artillery.h"
 #include "LegionFactory.h"
 
@@ -16,7 +16,7 @@ class  WoodlandFactory : public LegionFactory{
         WoodlandFactory();
         ~WoodlandFactory();
         virtual Infantry*  createInfantry();
-        virtual  Calvary*   createCalvary();
+        virtual  Cavalry*   createCalvary();
         virtual  Artillery* createArtillery();
         void deployArtillery();
 };
