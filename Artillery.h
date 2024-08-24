@@ -10,5 +10,7 @@ class Artillery : public LegionUnit{
     public:
         Artillery();
         ~Artillery();
+        virtual void move();
+        virtual void attack();
 };
 #endif

@@ -10,5 +10,7 @@ class Infantry : public LegionUnit{
     public:
         Infantry();
         ~Infantry();
+        virtual void move();
+        virtual void attack();
 };
 #endif
