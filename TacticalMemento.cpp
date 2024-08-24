@@ -1,9 +1,14 @@
 #include <iostream>
 #include "TacticalMemento.h"
-using namespace std;
 
-TacticalMemento::TacticalMemento(BattleStrategy* strategy) : storedStrategy(strategy) {}
+TacticalMemento::TacticalMemento(BattleStrategy* strategy, int performance) 
+    : storedStrategy(strategy), performance(performance) {}
 
 BattleStrategy* TacticalMemento::getStoredStrategy() const {
     return storedStrategy;
 }
+
+int TacticalMemento::getPerformance() const {
+    return performance;
+}
+

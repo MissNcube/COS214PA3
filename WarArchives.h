@@ -13,6 +13,7 @@ public:
     void addTacticalMemento(TacticalMemento* memento, const std::string& label);
     void removeTacticalMemento(const std::string& label);
     TacticalMemento* getTacticalMemento(const std::string& label);
+    TacticalMemento* getBestPerformingMemento(); // New method to get the best performing strategy
 };
 
 #endif /* WARARCHIVES_H */

@@ -1,5 +1,5 @@
-#include <iostream>
 #include "TacticalCommand.h"
+#include <iostream>
 using namespace std;
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
@@ -15,8 +15,8 @@ void TacticalCommand::executeStrategy() {
     }
 }
 
-void TacticalCommand::saveCurrentStrategy(const std::string& label) {
-    TacticalMemento* memento = planner.createMemento();
+void TacticalCommand::saveCurrentStrategy(const std::string& label, int performance) {
+    TacticalMemento* memento = planner.createMemento(performance);
     archives.addTacticalMemento(memento, label);
 }
 
@@ -29,5 +29,9 @@ void TacticalCommand::restoreStrategy(const std::string& label) {
 }
 
 void TacticalCommand::chooseBestStrategy() {
-    // Need to choose the best strategy based on stored mementos ->  still not sure how though 
+    TacticalMemento* bestMemento = archives.getBestPerformingMemento();
+    if (bestMemento) {
+        planner.restoreMemento(bestMemento);
+        strategy = planner.getCurrentStrategy();
+    }
 }

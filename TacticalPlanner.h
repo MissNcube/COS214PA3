@@ -10,7 +10,7 @@ private:
 
 public:
     void setStrategy(BattleStrategy* strategy);
-    TacticalMemento* createMemento();
+    TacticalMemento* createMemento(int performance);
     void restoreMemento(TacticalMemento* memento);
     BattleStrategy* getCurrentStrategy() const;
 };
