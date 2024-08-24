@@ -15,7 +15,7 @@ private:
 public:
     void setStrategy(BattleStrategy* s);
     void executeStrategy();
-    void saveCurrentStrategy(const std::string& label);
+    void saveCurrentStrategy(const std::string& label, int performance);
     void restoreStrategy(const std::string& label);
     void chooseBestStrategy();
 };

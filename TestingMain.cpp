@@ -12,14 +12,19 @@ int main() {
 
     commander.setStrategy(&flanking);
     commander.executeStrategy();
-
-    commander.saveCurrentStrategy("First Engagement");
+    commander.saveCurrentStrategy("Flanking Engagement", 75); // Flanking had 75% success
 
     commander.setStrategy(&fortification);
     commander.executeStrategy();
+    commander.saveCurrentStrategy("Fortification Engagement", 50); // Fortification had 50% success
 
-    commander.restoreStrategy("First Engagement");
+    commander.setStrategy(&ambush);
     commander.executeStrategy();
+    commander.saveCurrentStrategy("Ambush Engagement", 85); // Ambush had 85% success
+
+    // Choose the best strategy based on past performance
+    commander.chooseBestStrategy();
+    commander.executeStrategy(); // Should execute the Ambush strategy since it had the best performance
 
     return 0;
 }

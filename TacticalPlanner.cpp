@@ -1,13 +1,12 @@
 #include <iostream>
 #include "TacticalPlanner.h"
-using namespace std;
 
 void TacticalPlanner::setStrategy(BattleStrategy* strategy) {
     currentStrategy = strategy;
 }
 
-TacticalMemento* TacticalPlanner::createMemento() {
-    return new TacticalMemento(currentStrategy);
+TacticalMemento* TacticalPlanner::createMemento(int performance) {
+    return new TacticalMemento(currentStrategy, performance);
 }
 
 void TacticalPlanner::restoreMemento(TacticalMemento* memento) {
@@ -17,3 +16,4 @@ void TacticalPlanner::restoreMemento(TacticalMemento* memento) {
 BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
     return currentStrategy;
 }
+
