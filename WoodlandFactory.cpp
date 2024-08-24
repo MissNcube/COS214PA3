@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "WoodlandFactory.h"
 
 WoodlandFactory::WoodlandFactory()
@@ -10,7 +13,7 @@ WoodlandFactory::~WoodlandFactory()
 }
 Infantry* WoodlandFactory::createInfantry()
 {
-    return WoodlandInfantry();
+    return new WoodlandInfantry();
 }
 Cavalry* WoodlandFactory::createCavalry()
 {
@@ -18,9 +21,9 @@ Cavalry* WoodlandFactory::createCavalry()
 }
 Artillery* WoodlandFactory::createArtillery()
 {
-
+    return new WoodlandArtillery();
 }
 void WoodlandFactory::deployArtillery()
 {
-
+    cout << "Deploying Woodland Artillery" << endl;
 }

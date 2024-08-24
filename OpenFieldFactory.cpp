@@ -2,25 +2,25 @@
 
 OpenFieldFactory::OpenFieldFactory()
 {
-
+    cout << "OpenField Factory created " << endl;
 }
 OpenFieldFactory::~OpenFieldFactory()
 {
-
+    cout << "OpenField Factory destroyed " << endl;
 }
-Infantry*  OpenFieldFactory::createInfantry()
+Infantry* OpenFieldFactory::createInfantry()
 {
-
+    return new OpenFieldInfantry();
 }
-Calvary*   OpenFieldFactory::createCalvary()
+Cavalry* OpenFieldFactory::createCavalry()
 {
-
+    return new OpenFieldCavalry();
 }
 Artillery* OpenFieldFactory::createArtillery()
 {
-
+    return new OpenFieldArtillery();
 }
 void OpenFieldFactory::deployArtillery()
 {
-
+    cout<< " OpenField deploying Artillery  " << endl;
 }

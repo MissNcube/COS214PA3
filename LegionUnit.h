@@ -1,6 +1,9 @@
 #ifndef LEGIONUNIT_H
 #define  LEGIONUNIT_H
 #include <iostream>
+#include "LegionFactory.h"
+
+
 using namespace std;
 
 class  LegionUnit {

@@ -1,9 +1,16 @@
 #ifndef OPENFIELDFACTORY_H
 #define OPENFIELDFACTORY_H
 #include "Infantry.h"
-#include "Calvary.h"
+#include "Cavalry.h"
 #include "Artillery.h"
 #include "LegionFactory.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "Riverbank.h"
+#include "OpenFieldInfantry.h"
+#include "OpenFieldCavalry.h"
+#include "OpenFieldArtillery.h"
+
 
 class LegionFactory;
 
@@ -16,7 +23,7 @@ class  OpenFieldFactory : public LegionFactory{
         OpenFieldFactory();
         ~OpenFieldFactory();
         virtual Infantry*  createInfantry();
-        virtual  Calvary*   createCalvary();
+        virtual  Cavalry*   createCavalry();
         virtual  Artillery* createArtillery();
         void deployArtillery();
 };
