@@ -26,6 +26,9 @@ void TacticalCommand::restoreStrategy(const std::string& label) {
         planner.restoreMemento(memento);
         strategy = planner.getCurrentStrategy();
     }
+    else {
+        cout << "No Strategy found with label: " << label << endl;
+    }
 }
 
 void TacticalCommand::chooseBestStrategy() {
@@ -33,5 +36,8 @@ void TacticalCommand::chooseBestStrategy() {
     if (bestMemento) {
         planner.restoreMemento(bestMemento);
         strategy = planner.getCurrentStrategy();
+    }
+    else {
+        cout << "No previous strategy available to choose from." << endl;
     }
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "WarArchives.h"
+using namespace std;
 
 void WarArchives::addTacticalMemento(TacticalMemento* memento, const std::string& label) {
     mementos[label] = memento;
@@ -21,6 +22,9 @@ TacticalMemento* WarArchives::getBestPerformingMemento() {
         if (pair.second->getPerformance() > bestPerformance) {
             bestPerformance = pair.second->getPerformance();
             bestMemento = pair.second;
+        }
+        else {
+            cout << "Not archived war tactices found." << endl;
         }
     }
 
