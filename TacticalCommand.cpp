@@ -1,43 +1,32 @@
 #include "TacticalCommand.h"
 #include <iostream>
-using namespace std;
+
+TacticalCommand::TacticalCommand(WarArchives* archives) : strategy(nullptr), archives(archives) {}
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
     strategy = s;
-    planner.setStrategy(s);
 }
 
 void TacticalCommand::executeStrategy() {
     if (strategy) {
         strategy->engage();
     } else {
-        cout << "No strategy set!" << endl;
-    }
-}
-
-void TacticalCommand::saveCurrentStrategy(const std::string& label, int performance) {
-    TacticalMemento* memento = planner.createMemento(performance);
-    archives.addTacticalMemento(memento, label);
-}
-
-void TacticalCommand::restoreStrategy(const std::string& label) {
-    TacticalMemento* memento = archives.getTacticalMemento(label);
-    if (memento) {
-        planner.restoreMemento(memento);
-        strategy = planner.getCurrentStrategy();
-    }
-    else {
-        cout << "No Strategy found with label: " << label << endl;
+        std::cout << "No strategy set." << std::endl;
     }
 }
 
 void TacticalCommand::chooseBestStrategy() {
-    TacticalMemento* bestMemento = archives.getBestPerformingMemento();
+    TacticalMemento* bestMemento = archives->getBestMemento();
     if (bestMemento) {
-        planner.restoreMemento(bestMemento);
-        strategy = planner.getCurrentStrategy();
+        restoreMemento(bestMemento);
+    } else {
+        // Logic to select a new strategy if no memento is available
+        // For example, you could default to a standard strategy
     }
-    else {
-        cout << "No previous strategy available to choose from." << endl;
+}
+
+void TacticalCommand::restoreMemento(TacticalMemento* memento) {
+    if (memento) {
+        strategy = memento->getStoredStrategy();
     }
 }

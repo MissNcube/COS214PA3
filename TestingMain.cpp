@@ -1,61 +1,106 @@
-#include "TacticalCommand.h"
+#include <iostream>
+#include "LegionFactory.h"
+#include "RiverbankFactory.h"
+#include "WoodlandFactory.h"
+#include "OpenFieldFactory.h"
+#include "LegionUnit.h"
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "BattleStrategy.h"
+#include "Ambush.h"
 #include "Flanking.h"
 #include "Fortification.h"
-#include "Ambush.h"
-#include <iostream>
+#include "TacticalPlanner.h"
+#include "WarArchives.h"
+
+void displayUnitStats(const std::string& unitName, LegionUnit* unit) {
+    std::cout << unitName << " - Health: " << unit->getHealth()
+              << ", Damage: " << unit->getDamage()
+              << ", Defense: " << unit->getDefense() << std::endl;
+}
 
 int main() {
-    // Create the TacticalCommand object
-    TacticalCommand commander;
+    // Initialize the factories
+    LegionFactory legionFactory;
+    RiverbankFactory riverbankFactory;
+    WoodlandFactory woodlandFactory;
+    OpenFieldFactory openFieldFactory;
 
-    // Create strategies
-    Flanking flanking;
-    Fortification fortification;
-    Ambush ambush;
+    // Create units using the factories
+    LegionUnit* legionInfantry = legionFactory.createInfantry();
+    LegionUnit* legionCavalry = legionFactory.createCavalry();
+    LegionUnit* legionArtillery = legionFactory.createArtillery();
 
-    // Test Flanking strategy
-    std::cout << "Testing Flanking Strategy..." << std::endl;
-    commander.setStrategy(&flanking);
-    commander.executeStrategy();
-    commander.saveCurrentStrategy("Flanking Engagement", 75); // Flanking had 75% success
+    LegionUnit* riverbankInfantry = riverbankFactory.createInfantry();
+    LegionUnit* riverbankCavalry = riverbankFactory.createCavalry();
+    LegionUnit* riverbankArtillery = riverbankFactory.createArtillery();
 
-    // Test Fortification strategy
-    std::cout << "Testing Fortification Strategy..." << std::endl;
-    commander.setStrategy(&fortification);
-    commander.executeStrategy();
-    commander.saveCurrentStrategy("Fortification Engagement", 50); // Fortification had 50% success
+    LegionUnit* woodlandInfantry = woodlandFactory.createInfantry();
+    LegionUnit* woodlandCavalry = woodlandFactory.createCavalry();
+    LegionUnit* woodlandArtillery = woodlandFactory.createArtillery();
 
-    // Test Ambush strategy
-    std::cout << "Testing Ambush Strategy..." << std::endl;
-    commander.setStrategy(&ambush);
-    commander.executeStrategy();
-    commander.saveCurrentStrategy("Ambush Engagement", 85); // Ambush had 85% success
+    LegionUnit* openFieldInfantry = openFieldFactory.createInfantry();
+    LegionUnit* openFieldCavalry = openFieldFactory.createCavalry();
+    LegionUnit* openFieldArtillery = openFieldFactory.createArtillery();
 
-    // Restore and execute the best strategy based on past performance
-    std::cout << "\nChoosing and executing the best strategy based on past performance..." << std::endl;
-    commander.chooseBestStrategy();
-    commander.executeStrategy(); // Should execute the Ambush strategy since it had the best performance
+    // Display unit stats
+    displayUnitStats("Legion Infantry", legionInfantry);
+    displayUnitStats("Legion Cavalry", legionCavalry);
+    displayUnitStats("Legion Artillery", legionArtillery);
 
-    // Additional tests for edge cases and memory management
-    std::cout << "\nTesting edge cases..." << std::endl;
+    displayUnitStats("Riverbank Infantry", riverbankInfantry);
+    displayUnitStats("Riverbank Cavalry", riverbankCavalry);
+    displayUnitStats("Riverbank Artillery", riverbankArtillery);
 
-    // Attempt to restore a strategy that doesn't exist
-    std::cout << "Attempting to restore a non-existent strategy..." << std::endl;
-    commander.restoreStrategy("NonExistentStrategy"); // Should handle this gracefully
+    displayUnitStats("Woodland Infantry", woodlandInfantry);
+    displayUnitStats("Woodland Cavalry", woodlandCavalry);
+    displayUnitStats("Woodland Artillery", woodlandArtillery);
 
-    // Check behavior with no saved strategies
-    std::cout << "Clearing all strategies and attempting to choose the best strategy..." << std::endl;
-    //commander.clearStrategies(); // Clear all saved strategies
-    commander.chooseBestStrategy(); // Should handle gracefully when no strategies are saved
+    displayUnitStats("Open Field Infantry", openFieldInfantry);
+    displayUnitStats("Open Field Cavalry", openFieldCavalry);
+    displayUnitStats("Open Field Artillery", openFieldArtillery);
 
-    // Re-test after clearing strategies
-    std::cout << "Re-testing after clearing strategies..." << std::endl;
-    commander.setStrategy(&flanking);
-    commander.executeStrategy();
-    commander.saveCurrentStrategy("Flanking Engagement", 60); // Re-saving a strategy
+    // Set up strategies
+    BattleStrategy* ambushStrategy = new Ambush();
+    BattleStrategy* flankingStrategy = new Flanking();
+    BattleStrategy* fortificationStrategy = new Fortification();
 
-    commander.chooseBestStrategy(); // Should pick the Flanking strategy as it's the only one
-    commander.executeStrategy(); // Execute the selected strategy
+    // Initialize TacticalPlanner
+    TacticalPlanner tacticalPlanner;
+
+    // Add strategies to planner
+    tacticalPlanner.addStrategy(ambushStrategy);
+    tacticalPlanner.addStrategy(flankingStrategy);
+    tacticalPlanner.addStrategy(fortificationStrategy);
+
+    // Execute strategies and store results
+    tacticalPlanner.executeStrategies();
+
+    // Retrieve and display best strategy based on performance
+    BattleStrategy* bestStrategy = tacticalPlanner.getBestStrategy();
+    std::cout << "Best Strategy based on past performance: " << typeid(*bestStrategy).name() << std::endl;
+
+    // Display War Archives
+    WarArchives warArchives;
+    warArchives.displayArchives();
+
+    // Clean up dynamically allocated memory
+    delete legionInfantry;
+    delete legionCavalry;
+    delete legionArtillery;
+    delete riverbankInfantry;
+    delete riverbankCavalry;
+    delete riverbankArtillery;
+    delete woodlandInfantry;
+    delete woodlandCavalry;
+    delete woodlandArtillery;
+    delete openFieldInfantry;
+    delete openFieldCavalry;
+    delete openFieldArtillery;
+    delete ambushStrategy;
+    delete flankingStrategy;
+    delete fortificationStrategy;
 
     return 0;
 }
