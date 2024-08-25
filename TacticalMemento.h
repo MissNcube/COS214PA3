@@ -6,12 +6,9 @@
 class TacticalMemento {
 private:
     BattleStrategy* storedStrategy;
-    int performance; // Performance metric for the strategy
-
 public:
-    TacticalMemento(BattleStrategy* strategy, int performance);
-    BattleStrategy* getStoredStrategy() const;
-    int getPerformance() const;
+    TacticalMemento(BattleStrategy* strategy);
+    BattleStrategy* getStoredStrategy();
 };
 
-#endif /* TACTICALMEMENTO_H */
+#endif // TACTICALMEMENTO_H

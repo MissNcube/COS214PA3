@@ -2,22 +2,18 @@
 #define TACTICALCOMMAND_H
 
 #include "BattleStrategy.h"
-#include "TacticalPlanner.h"
 #include "WarArchives.h"
-#include <string>
 
 class TacticalCommand {
 private:
     BattleStrategy* strategy;
-    TacticalPlanner planner;
-    WarArchives archives;
-
+    WarArchives* archives;
 public:
+    TacticalCommand(WarArchives* archives);
     void setStrategy(BattleStrategy* s);
     void executeStrategy();
-    void saveCurrentStrategy(const std::string& label, int performance);
-    void restoreStrategy(const std::string& label);
     void chooseBestStrategy();
+    void restoreMemento(TacticalMemento* memento);
 };
 
-#endif /* TACTICALCOMMAND_H */
+#endif // TACTICAL_COMMAND_H

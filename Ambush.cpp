@@ -1,7 +1,10 @@
-#include <iostream>
 #include "Ambush.h"
-using namespace std;
+#include <iostream>
 
 void Ambush::engage() {
-    cout << "Setting up an ambush!" << endl;
+    std::cout << "Engaging in ambush strategy. Executing surprise attack!" << std::endl;
+}
+
+bool Ambush::requiresStealth() const {
+    return true; // Ambush strategy typically requires stealth
 }

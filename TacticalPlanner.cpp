@@ -1,19 +1,17 @@
-#include <iostream>
 #include "TacticalPlanner.h"
 
-void TacticalPlanner::setStrategy(BattleStrategy* strategy) {
-    currentStrategy = strategy;
-}
-
-TacticalMemento* TacticalPlanner::createMemento(int performance) {
-    return new TacticalMemento(currentStrategy, performance);
+TacticalMemento* TacticalPlanner::createMemento() {
+    return new TacticalMemento(currentStrategy);
 }
 
 void TacticalPlanner::restoreMemento(TacticalMemento* memento) {
     currentStrategy = memento->getStoredStrategy();
 }
 
+void TacticalPlanner::setCurrentStrategy(BattleStrategy* strategy) {
+    currentStrategy = strategy;
+}
+
 BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
     return currentStrategy;
 }
-

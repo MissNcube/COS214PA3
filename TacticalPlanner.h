@@ -1,18 +1,17 @@
 #ifndef TACTICALPLANNER_H
 #define TACTICALPLANNER_H
 
-#include "TacticalMemento.h"
 #include "BattleStrategy.h"
+#include "TacticalMemento.h"
 
 class TacticalPlanner {
 private:
     BattleStrategy* currentStrategy;
-
 public:
-    void setStrategy(BattleStrategy* strategy);
-    TacticalMemento* createMemento(int performance);
+    TacticalMemento* createMemento();
     void restoreMemento(TacticalMemento* memento);
+    void setCurrentStrategy(BattleStrategy* strategy);
     BattleStrategy* getCurrentStrategy() const;
 };
 
-#endif /* TACTICALPLANNER_H */
+#endif // TACTICALPLANNER_H

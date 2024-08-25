@@ -1,14 +1,7 @@
-#include <iostream>
 #include "TacticalMemento.h"
 
-TacticalMemento::TacticalMemento(BattleStrategy* strategy, int performance) 
-    : storedStrategy(strategy), performance(performance) {}
+TacticalMemento::TacticalMemento(BattleStrategy* strategy) : storedStrategy(strategy) {}
 
-BattleStrategy* TacticalMemento::getStoredStrategy() const {
+BattleStrategy* TacticalMemento::getStoredStrategy() {
     return storedStrategy;
 }
-
-int TacticalMemento::getPerformance() const {
-    return performance;
-}
-

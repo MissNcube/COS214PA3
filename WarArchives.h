@@ -1,19 +1,16 @@
 #ifndef WARARCHIVES_H
 #define WARARCHIVES_H
 
-#include "TacticalMemento.h"
-#include <map>
 #include <string>
+#include <unordered_map>
+#include "TacticalMemento.h"
 
 class WarArchives {
 private:
-    std::map<std::string, TacticalMemento*> mementos;
-
+    std::unordered_map<std::string, TacticalMemento*> archives;
 public:
     void addTacticalMemento(TacticalMemento* memento, const std::string& label);
-    void removeTacticalMemento(const std::string& label);
-    TacticalMemento* getTacticalMemento(const std::string& label);
-    TacticalMemento* getBestPerformingMemento(); // New method to get the best performing strategy
+    TacticalMemento* getBestMemento();
 };
 
-#endif /* WARARCHIVES_H */
+#endif // WARARCHIVES_H

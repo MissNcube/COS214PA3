@@ -2,11 +2,11 @@
 #define AMBUSH_H
 
 #include "BattleStrategy.h"
-#include <iostream>
 
 class Ambush : public BattleStrategy {
 public:
     void engage() override;
+    bool requiresStealth() const override;
 };
 
-#endif /* AMBUSH_H */
+#endif // AMBUSH_H

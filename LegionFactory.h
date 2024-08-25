@@ -1,19 +1,18 @@
-#ifndef LEGIONFACTORY_H
-#define  LEGIONFACTORY_H
-#include "Infantry.h"
-#include "Cavalry.h"
-#include "Artillery.h"
+#ifndef LEGION_FACTORY_H
+#define LEGION_FACTORY_H
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include "BattleStrategy.h"
 
-class  LegionFactory {
-    public:
-    LegionFactory();
-    virtual ~LegionFactory();
-    virtual Infantry* createInfantry() = 0;
-    virtual Cavalry* createCavalry() = 0;
-    virtual Artillery*  createArtillery() = 0;
+class Infantry;
+class Cavalry;
+class Artillery;
+
+class LegionFactory {
+public:
+    virtual Infantry* createInfantry(BattleStrategy* strategy) = 0;
+    virtual Cavalry* createCavalry(BattleStrategy* strategy) = 0;
+    virtual Artillery* createArtillery(BattleStrategy* strategy) = 0;
+    virtual ~LegionFactory() = default;
 };
-#endif
+
+#endif // LEGION_FACTORY_H

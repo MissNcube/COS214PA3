@@ -1,8 +1,10 @@
-#include <iostream>
 #include "Fortification.h"
-using namespace std;
+#include <iostream>
 
 void Fortification::engage() {
-    cout << "Fortifying positions!" << endl;
+    std::cout << "Engaging in fortification strategy. Strengthening defenses!" << std::endl;
 }
- 
+
+bool Fortification::requiresStealth() const {
+    return false; // Fortification does not require stealth
+}
