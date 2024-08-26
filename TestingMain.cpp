@@ -34,19 +34,21 @@ int main() {
     LegionUnit* openFieldArtillery = openFieldFactory.createArtillery();
 
     // Display unit stats
-    displayUnitStats("Riverbank Infantry", riverbankInfantry);
-    displayUnitStats("Riverbank Cavalry", riverbankCavalry);
-    displayUnitStats("Riverbank Artillery", riverbankArtillery);
+    riverbankInfantry->displayUnitStats("Riverbank Infantry");
+    riverbankCavalry->displayUnitStats("Riverbank Cavalry");
+    riverbankArtillery->displayUnitStats("Riverbank Artillery");
 
-    displayUnitStats("Woodland Infantry", woodlandInfantry);
-    displayUnitStats("Woodland Cavalry", woodlandCavalry);
-    displayUnitStats("Woodland Artillery", woodlandArtillery);
+    woodlandInfantry->displayUnitStats("Woodland Infantry");
+    woodlandCavalry->displayUnitStats("Woodland Cavalry");
+    woodlandArtillery->displayUnitStats("Woodland Artillery");
 
-    displayUnitStats("Open Field Infantry", openFieldInfantry);
-    displayUnitStats("Open Field Cavalry", openFieldCavalry);
-    displayUnitStats("Open Field Artillery", openFieldArtillery);
+    openFieldInfantry->displayUnitStats("Open Field Infantry");
+    openFieldCavalry->displayUnitStats("Open Field Cavalry");
+    openFieldArtillery->displayUnitStats("Open Field Artillery");
 
     // Set up strategies
+
+    
     BattleStrategy* ambushStrategy = new Ambush();
     BattleStrategy* flankingStrategy = new Flanking();
     BattleStrategy* fortificationStrategy = new Fortification();
@@ -69,6 +71,7 @@ int main() {
     // Display War Archives
     WarArchives warArchives;
     warArchives.displayArchives();
+    
 
     // Clean up dynamically allocated memory
     delete riverbankInfantry;

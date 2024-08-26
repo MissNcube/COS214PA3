@@ -36,3 +36,10 @@ int OpenFieldCavalry::getDefense() const
     // Return the defense value specific to OpenFieldCavalry
     return 40; 
 }
+void OpenFieldCavalry::displayUnitStats(string name) {
+    std::cout << "Unit Stats for : " << name << std::endl;
+    // Display various unit statistics
+    std::cout << "Health: " << getHealth() << std::endl;
+    std::cout << "Damage: " << getDamage() << std::endl;
+    std::cout << "Defense: " << getDefense() << std::endl;
+}

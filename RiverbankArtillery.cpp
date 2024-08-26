@@ -36,3 +36,11 @@ int RiverbankArtillery::getDefense() const
     // Return the defense value specific to RiverbankArtillery
     return 20;
 }
+
+void RiverbankArtillery::displayUnitStats(string name) {
+    std::cout << "Unit Stats for : " << name << std::endl;
+    // Display various unit statistics
+    std::cout << "Health: " << getHealth() << std::endl;
+    std::cout << "Damage: " << getDamage() << std::endl;
+    std::cout << "Defense: " << getDefense() << std::endl;
+}

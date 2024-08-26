@@ -19,5 +19,6 @@ class  OpenFieldCavalry : public Cavalry{
         int getHealth() const override;
         int getDamage() const override;
         int getDefense() const override;
+        void displayUnitStats(string name);
 };
 #endif
