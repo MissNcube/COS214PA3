@@ -14,3 +14,13 @@ class UnitComponent{
     virtual void remove(UnitComponent* component)=0;
 };
 #endif
+
+
+
+
+
+
+
+
+
+
