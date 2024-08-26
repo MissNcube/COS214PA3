@@ -17,5 +17,6 @@ class  LegionUnit : public UnitComponent{
     virtual int getHealth() const = 0;
     virtual int getDamage() const = 0;
     virtual int getDefense() const = 0;
+    virtual void displayUnitStats(string name) = 0;
 };
 #endif  //LEGIONUNIT_H

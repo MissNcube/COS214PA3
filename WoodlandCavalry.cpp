@@ -36,3 +36,11 @@ int WoodlandCavalry::getDefense() const
     // Return the defense value specific to WoodlandCavalry
     return 40;
 }
+
+void WoodlandCavalry::displayUnitStats(string name) {
+    std::cout << "Unit Stats for : " << name << std::endl;
+    // Display various unit statistics
+    std::cout << "Health: " << getHealth() << std::endl;
+    std::cout << "Damage: " << getDamage() << std::endl;
+    std::cout << "Defense: " << getDefense() << std::endl;
+}

@@ -30,3 +30,10 @@ int OpenFieldInfantry::getDamage() const {
 int OpenFieldInfantry::getDefense() const {
     return 25;  // Example value, replace with your logic
 }
+void OpenFieldInfantry::displayUnitStats(string name) {
+    std::cout << "Unit Stats for : " << name << std::endl;
+    // Display various unit statistics
+    std::cout << "Health: " << getHealth() << std::endl;
+    std::cout << "Damage: " << getDamage() << std::endl;
+    std::cout << "Defense: " << getDefense() << std::endl;
+}
