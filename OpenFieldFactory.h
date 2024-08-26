@@ -23,9 +23,9 @@ class  OpenFieldFactory : public LegionFactory{
     public:
         OpenFieldFactory();
         ~OpenFieldFactory();
-        virtual Infantry*  createInfantry();
-        virtual  Cavalry*   createCavalry();
-        virtual  Artillery* createArtillery();
+        virtual LegionUnit*  createInfantry();
+        virtual  LegionUnit*   createCavalry();
+        virtual  LegionUnit* createArtillery();
         void deployArtillery();
 };
 #endif
