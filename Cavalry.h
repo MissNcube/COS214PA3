@@ -5,6 +5,7 @@ using namespace std;
 #include "LegionUnit.h"
 
 class LegionUnit;
+class UnitComponent;
 
 class Cavalry : public LegionUnit{
     private:

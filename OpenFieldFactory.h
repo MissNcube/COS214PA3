@@ -22,10 +22,10 @@ using namespace std;
 class  OpenFieldFactory : public LegionFactory{
     public:
         OpenFieldFactory();
-        virtual ~OpenFieldFactory();
-        virtual LegionUnit*  createInfantry();
-        virtual  LegionUnit*   createCavalry();
-        virtual  LegionUnit* createArtillery();
+        ~OpenFieldFactory();
+        virtual Infantry*  createInfantry();
+        virtual  Cavalry*   createCavalry();
+        virtual  Artillery* createArtillery();
         void deployArtillery();
 };
 #endif

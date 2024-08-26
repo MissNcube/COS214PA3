@@ -2,11 +2,13 @@
 #define  LEGIONUNIT_H
 #include <iostream>
 #include "LegionFactory.h"
+#include "UnitComponent.h"
 
+class UnitComponent;
 
 using namespace std;
 
-class  LegionUnit {
+class  LegionUnit : public UnitComponent{
     public:
     LegionUnit();  
     virtual ~LegionUnit() = default;
