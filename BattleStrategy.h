@@ -1,6 +1,8 @@
 #ifndef BATTLESTRATEGY_H
 #define BATTLESTRATEGY_H
 
+#include "LegionUnit.h"
+
 class BattleStrategy {
 public:
     virtual void engage() = 0;

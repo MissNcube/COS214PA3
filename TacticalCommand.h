@@ -3,21 +3,27 @@
 
 #include "BattleStrategy.h"
 #include "WarArchives.h"
+#include "UnitComponent.h"
 #include <vector>
 
 class TacticalCommand {
 private:
     BattleStrategy* strategy;
     WarArchives* archives;
-    std::vector<BattleStrategy*> strategies; // hold multiple strategies
+
 public:
     TacticalCommand(WarArchives* archives);
     void setStrategy(BattleStrategy* s);
-    void executeStrategy();
+    void executeStrategy(UnitComponent& unit);
     void chooseBestStrategy();
-    void addStrategy(BattleStrategy* strategy);
     void restoreMemento(TacticalMemento* memento);
-    void executeStrategies(const std::vector<TacticalCommand*>& strategies, Unit& unit);
+
+    // New methods
+    void addStrategy(BattleStrategy* s, UnitComponent& unit);
+    void displayUnitStats(UnitComponent& unit);
+    void executeStrategies(const std::vector<TacticalCommand*>& strategies, UnitComponent& unit);
+    BattleStrategy* getBestStrategy();
+    void displayArchives();
 };
 
 #endif // TACTICAL_COMMAND_H
