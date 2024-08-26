@@ -12,8 +12,11 @@ using namespace std;
 class  OpenFieldArtillery : public Artillery{
     public:
         OpenFieldArtillery();
-        ~OpenFieldArtillery();
+        virtual ~OpenFieldArtillery();
         virtual void move();
         virtual  void attack();
+        int getHealth() const override;
+        int getDamage() const override;
+        int getDefense() const override;
 };
 #endif

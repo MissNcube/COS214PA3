@@ -1,4 +1,8 @@
 #include "OpenFieldFactory.h"
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "LegionUnit.h"
 
 OpenFieldFactory::OpenFieldFactory()
 {
@@ -8,18 +12,18 @@ OpenFieldFactory::~OpenFieldFactory()
 {
     cout << "OpenField Factory destroyed " << endl;
 }
-Infantry* OpenFieldFactory::createInfantry()
-{
+LegionUnit* OpenFieldFactory::createInfantry() {
     return new OpenFieldInfantry();
 }
-Cavalry* OpenFieldFactory::createCavalry()
-{
+
+LegionUnit* OpenFieldFactory::createCavalry() {
     return new OpenFieldCavalry();
 }
-Artillery* OpenFieldFactory::createArtillery()
-{
+
+LegionUnit* OpenFieldFactory::createArtillery() {
     return new OpenFieldArtillery();
 }
+
 void OpenFieldFactory::deployArtillery()
 {
     cout<< " OpenField deploying Artillery  " << endl;

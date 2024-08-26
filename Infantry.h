@@ -7,10 +7,14 @@ using namespace std;
 class LegionUnit;
 
 class Infantry : public LegionUnit{
+    private:
+        BattleStrategy* strategy;
+
     public:
         Infantry();
         ~Infantry();
-        virtual void move();
-        virtual void attack();
+        Infantry(BattleStrategy* strat);
+        void move() override;
+        void attack() override;
 };
 #endif

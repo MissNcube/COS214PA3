@@ -30,3 +30,8 @@ void TacticalCommand::restoreMemento(TacticalMemento* memento) {
         strategy = memento->getStoredStrategy();
     }
 }
+
+// TacticalCommand.cpp
+void TacticalCommand::addStrategy(BattleStrategy* strategy) {
+    strategies.push_back(strategy);
+}

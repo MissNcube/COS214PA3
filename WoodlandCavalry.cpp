@@ -1,4 +1,5 @@
 #include "WoodlandCavalry.h"
+#include "LegionUnit.h"
 
 WoodlandCavalry::WoodlandCavalry()
 {
@@ -15,4 +16,23 @@ void WoodlandCavalry::move()
 void WoodlandCavalry::attack()
 {
     cout << "Woodland Cavalry is attacking " << endl;
+}
+
+// needed to add some functionality
+int WoodlandCavalry::getHealth() const
+{
+    // Return the health value specific to WoodlandCavalry
+    return 120; 
+}
+
+int WoodlandCavalry::getDamage() const 
+{
+    // Return the damage value specific to WoodlandCavalry
+    return 70; 
+}
+
+int WoodlandCavalry::getDefense() const 
+{
+    // Return the defense value specific to WoodlandCavalry
+    return 40;
 }

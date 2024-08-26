@@ -10,6 +10,7 @@
 #include "RiverbankInfantry.h"
 #include "RiverbankCavalry.h"
 #include "RiverbankArtillery.h"
+#include "LegionUnit.h"
 
 class LegionFactory;
 
@@ -21,9 +22,10 @@ class  RiverbankFactory : public LegionFactory{
     public:
         RiverbankFactory();
         ~RiverbankFactory();
-        virtual Infantry*  createInfantry();
-        virtual  Cavalry*   createCavalry();
-        virtual  Artillery* createArtillery();
+        virtual LegionUnit*  createInfantry();
+        virtual  LegionUnit*   createCavalry();
+        virtual  LegionUnit* createArtillery();
         void deployArtillery();
+        
 };
 #endif

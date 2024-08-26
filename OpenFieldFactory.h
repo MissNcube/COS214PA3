@@ -4,6 +4,7 @@
 #include "Cavalry.h"
 #include "Artillery.h"
 #include "LegionFactory.h"
+#include "LegionUnit.h"
 #include "Cavalry.h"
 #include "Artillery.h"
 #include "Riverbank.h"
@@ -21,10 +22,10 @@ using namespace std;
 class  OpenFieldFactory : public LegionFactory{
     public:
         OpenFieldFactory();
-        ~OpenFieldFactory();
-        virtual Infantry*  createInfantry();
-        virtual  Cavalry*   createCavalry();
-        virtual  Artillery* createArtillery();
+        virtual ~OpenFieldFactory();
+        virtual LegionUnit*  createInfantry();
+        virtual  LegionUnit*   createCavalry();
+        virtual  LegionUnit* createArtillery();
         void deployArtillery();
 };
 #endif

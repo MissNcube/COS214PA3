@@ -8,12 +8,15 @@ class Cavalry;
 #include <iostream>
 using namespace std;
 
-
-class  WoodlandCavalry : public Cavalry{
-    public:
-        WoodlandCavalry();
-        ~WoodlandCavalry();
-        virtual void move();
-        virtual  void attack();
+class WoodlandCavalry : public Cavalry
+{
+public:
+    WoodlandCavalry();
+    ~WoodlandCavalry();
+    virtual void move();
+    virtual void attack();
+    int getHealth() const override;
+    int getDamage() const override;
+    int getDefense() const override;
 };
 #endif

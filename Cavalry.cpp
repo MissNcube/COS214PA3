@@ -4,15 +4,18 @@ Cavalry::Cavalry()
 {
     cout << "Cavalry created " << endl;
 }
-Cavalry::~Cavalry()
+Cavalry::Cavalry(BattleStrategy *strat) : strategy(strat) {}
+
+void Cavalry::move() 
 {
-    cout << "Cavalry destroyed " << endl;
+    // Example behavior: Cavalry might move quickly to outflank the enemy.
+    strategy->executeMovement(this);
+    std::cout << "Cavalry moving swiftly according to strategy." << std::endl;
 }
-void Cavalry::move()
+
+void Cavalry::attack() 
 {
-    cout << "Cavalry is moving " << endl;
-}
-void Cavalry::attack()
-{
-    cout << "Cavalry is attacking " << endl;
+    // Example behavior: Cavalry might charge at high speed, aiming to break enemy lines.
+    strategy->executeAttack(this);
+    std::cout << "Cavalry executing a charge attack according to strategy." << std::endl;
 }

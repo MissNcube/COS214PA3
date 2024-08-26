@@ -4,6 +4,7 @@
 #include "Infantry.h"
 #include "Cavalry.h"
 #include "Artillery.h"
+#include "LegionUnit.h"
 #include "LegionFactory.h"
 #include "Woodland.h"
 #include "WoodlandCavalry.h"
@@ -14,9 +15,9 @@ class WoodlandFactory : public LegionFactory {
 public:
     WoodlandFactory();
     ~WoodlandFactory();
-    virtual Infantry* createInfantry();
-    virtual Cavalry* createCavalry();
-    virtual Artillery* createArtillery();
+    virtual LegionUnit* createInfantry();
+    virtual LegionUnit* createCavalry();
+    virtual LegionUnit* createArtillery();
     void deployArtillery();
 };
 

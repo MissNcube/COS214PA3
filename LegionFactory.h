@@ -2,6 +2,10 @@
 #define LEGION_FACTORY_H
 
 #include "BattleStrategy.h"
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "LegionUnit.h"
 
 class Infantry;
 class Cavalry;
@@ -9,9 +13,9 @@ class Artillery;
 
 class LegionFactory {
 public:
-    virtual Infantry* createInfantry(BattleStrategy* strategy) = 0;
-    virtual Cavalry* createCavalry(BattleStrategy* strategy) = 0;
-    virtual Artillery* createArtillery(BattleStrategy* strategy) = 0;
+    virtual LegionUnit* createInfantry() = 0;
+    virtual LegionUnit* createCavalry() = 0;
+    virtual LegionUnit* createArtillery() = 0;
     virtual ~LegionFactory() = default;
 };
 

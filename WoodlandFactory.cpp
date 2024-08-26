@@ -2,6 +2,10 @@
 #include "WoodlandInfantry.h"
 #include "WoodlandCavalry.h"
 #include "WoodlandArtillery.h"
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "LegionUnit.h"
 #include <iostream>
 
 using namespace std;
@@ -14,15 +18,15 @@ WoodlandFactory::~WoodlandFactory() {
     cout << "Woodland Factory destroyed" << endl;
 }
 
-Infantry* WoodlandFactory::createInfantry() {
+LegionUnit* WoodlandFactory::createInfantry() {
     return new WoodlandInfantry();
 }
 
-Cavalry* WoodlandFactory::createCavalry() {
+LegionUnit* WoodlandFactory::createCavalry() {
     return new WoodlandCavalry();
 }
 
-Artillery* WoodlandFactory::createArtillery() {
+LegionUnit* WoodlandFactory::createArtillery() {
     return new WoodlandArtillery();
 }
 

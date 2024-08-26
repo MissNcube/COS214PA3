@@ -8,12 +8,15 @@ class Infantry;
 #include <iostream>
 using namespace std;
 
-
-class  RiverbankInfantry : public Infantry{
-    public:
-        RiverbankInfantry();
-        ~RiverbankInfantry();
-        virtual void move();
-        virtual  void attack();
+class RiverbankInfantry : public Infantry
+{
+public:
+    RiverbankInfantry();
+    ~RiverbankInfantry();
+    virtual void move();
+    virtual void attack();
+    int getHealth() const override;
+    int getDamage() const override;
+    int getDefense() const override;
 };
 #endif

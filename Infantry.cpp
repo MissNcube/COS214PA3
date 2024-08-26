@@ -1,18 +1,17 @@
 #include "Infantry.h"
 
-Infantry::Infantry()
+Infantry::Infantry(BattleStrategy *strat) : strategy(strat) {}
+
+void Infantry::move() 
 {
-    cout<< "Infantry created "<<endl;    
+    // Example behavior: Infantry might move slowly but in a tightly coordinated formation.
+    strategy->executeMovement(this); // Use the strategy to determine movement behavior
+    std::cout << "Infantry moving according to strategy." << std::endl;
 }
-Infantry::~Infantry()
-{
-    cout<< "Infantry destroyed "<<endl;
-}
-void Infantry::move()
-{
-    cout<<"Infantry is moving"<<endl;
-}
+
 void Infantry::attack()
 {
-    cout<<"Infantry is attacking"<<endl;
+    // Example behavior: Infantry might perform a frontal assault or defensive stand.
+    strategy->executeAttack(this); // Use the strategy to determine attack behavior
+    std::cout << "Infantry attacking according to strategy." << std::endl;
 }

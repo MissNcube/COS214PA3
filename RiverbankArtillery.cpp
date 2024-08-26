@@ -1,4 +1,5 @@
 #include "RiverbankArtillery.h"
+#include "LegionUnit.h"
 
 RiverbankArtillery::RiverbankArtillery()
 {
@@ -15,4 +16,23 @@ void RiverbankArtillery::move()
 void RiverbankArtillery::attack()
 {
     cout << "Riverbank Artillery is attacking " << endl;
+} 
+
+// needed to add some functionality
+int RiverbankArtillery::getHealth() const
+{
+    // Return the health value specific to RiverbankArtillery
+    return 80; 
+}
+
+int RiverbankArtillery::getDamage() const 
+{
+    // Return the damage value specific to RiverbankArtillery
+    return 90; 
+}
+
+int RiverbankArtillery::getDefense() const 
+{
+    // Return the defense value specific to RiverbankArtillery
+    return 20;
 }

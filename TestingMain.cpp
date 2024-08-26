@@ -14,24 +14,13 @@
 #include "TacticalPlanner.h"
 #include "WarArchives.h"
 
-void displayUnitStats(const std::string& unitName, LegionUnit* unit) {
-    std::cout << unitName << " - Health: " << unit->getHealth()
-              << ", Damage: " << unit->getDamage()
-              << ", Defense: " << unit->getDefense() << std::endl;
-}
-
 int main() {
     // Initialize the factories
-    LegionFactory legionFactory;
     RiverbankFactory riverbankFactory;
     WoodlandFactory woodlandFactory;
     OpenFieldFactory openFieldFactory;
 
     // Create units using the factories
-    LegionUnit* legionInfantry = legionFactory.createInfantry();
-    LegionUnit* legionCavalry = legionFactory.createCavalry();
-    LegionUnit* legionArtillery = legionFactory.createArtillery();
-
     LegionUnit* riverbankInfantry = riverbankFactory.createInfantry();
     LegionUnit* riverbankCavalry = riverbankFactory.createCavalry();
     LegionUnit* riverbankArtillery = riverbankFactory.createArtillery();
@@ -45,10 +34,6 @@ int main() {
     LegionUnit* openFieldArtillery = openFieldFactory.createArtillery();
 
     // Display unit stats
-    displayUnitStats("Legion Infantry", legionInfantry);
-    displayUnitStats("Legion Cavalry", legionCavalry);
-    displayUnitStats("Legion Artillery", legionArtillery);
-
     displayUnitStats("Riverbank Infantry", riverbankInfantry);
     displayUnitStats("Riverbank Cavalry", riverbankCavalry);
     displayUnitStats("Riverbank Artillery", riverbankArtillery);
@@ -79,16 +64,13 @@ int main() {
 
     // Retrieve and display best strategy based on performance
     BattleStrategy* bestStrategy = tacticalPlanner.getBestStrategy();
-    std::cout << "Best Strategy based on past performance: " << typeid(*bestStrategy).name() << std::endl;
+    std::cout << "Best Strategy based on past performance: " << bestStrategy->getName() << std::endl;
 
     // Display War Archives
     WarArchives warArchives;
     warArchives.displayArchives();
 
     // Clean up dynamically allocated memory
-    delete legionInfantry;
-    delete legionCavalry;
-    delete legionArtillery;
     delete riverbankInfantry;
     delete riverbankCavalry;
     delete riverbankArtillery;

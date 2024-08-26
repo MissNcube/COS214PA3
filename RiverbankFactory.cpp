@@ -1,4 +1,8 @@
 #include "RiverbankFactory.h"
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "LegionUnit.h"
 
 RiverbankFactory::RiverbankFactory()
 {
@@ -8,15 +12,15 @@ RiverbankFactory::~RiverbankFactory()
 {
     cout << "Riverbank Factory destroyed " << endl;
 }
-Infantry* RiverbankFactory::createInfantry()
+LegionUnit* RiverbankFactory::createInfantry()
 {
     return new  RiverbankInfantry();
 }
-Cavalry* RiverbankFactory::createCavalry()
+LegionUnit* RiverbankFactory::createCavalry()
 {
     return new RiverbankCavalry();
 }
-Artillery* RiverbankFactory::createArtillery()
+LegionUnit* RiverbankFactory::createArtillery()
 {
     return new RiverbankArtillery();
 }

@@ -13,8 +13,11 @@ using namespace std;
 class  OpenFieldCavalry : public Cavalry{
     public:
         OpenFieldCavalry();
-        ~OpenFieldCavalry();
+        virtual ~OpenFieldCavalry();
         virtual void move();
         virtual  void attack();
+        int getHealth() const override;
+        int getDamage() const override;
+        int getDefense() const override;
 };
 #endif

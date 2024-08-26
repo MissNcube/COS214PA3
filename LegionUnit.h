@@ -9,7 +9,7 @@ using namespace std;
 class  LegionUnit {
     public:
     LegionUnit();  
-    ~LegionUnit();
+    virtual ~LegionUnit() = default;
     virtual void move() =0;
     virtual void attack() =0;
     virtual int getHealth() const = 0;
