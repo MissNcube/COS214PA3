@@ -15,7 +15,7 @@ using namespace std;
 class  WoodlandInfantry : public Infantry{
     public:
         WoodlandInfantry();
-        ~WoodlandInfantry();
+        virtual ~WoodlandInfantry();
         virtual void move();
         virtual  void attack();
 };

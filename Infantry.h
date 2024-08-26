@@ -5,11 +5,12 @@ using namespace std;
 #include "LegionUnit.h"
 
 class LegionUnit;
+class UnitComponent;
 
-class Infantry : public LegionUnit{
+class Infantry : public LegionUnit, public UnitComponent{
     public:
         Infantry();
-        ~Infantry();
+        virtual ~Infantry();
         virtual void move();
         virtual void attack();
 };

@@ -12,7 +12,7 @@ using namespace std;
 class  OpenFieldInfantry : public Infantry{
     public:
         OpenFieldInfantry();
-        ~OpenFieldInfantry();
+        virtual ~OpenFieldInfantry();
         virtual void move();
         virtual  void attack();
 };

@@ -13,7 +13,7 @@ using namespace std;
 class  OpenFieldCavalry : public Cavalry{
     public:
         OpenFieldCavalry();
-        ~OpenFieldCavalry();
+        virtual ~OpenFieldCavalry();
         virtual void move();
         virtual  void attack();
 };

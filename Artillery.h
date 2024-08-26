@@ -5,8 +5,9 @@ using namespace std;
 #include "LegionUnit.h"
 
 class LegionUnit;
+class UnitComponent;
 
-class Artillery : public LegionUnit{
+class Artillery : public LegionUnit, public UnitComponent{
     public:
         Artillery();
         ~Artillery();

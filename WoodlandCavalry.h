@@ -12,7 +12,7 @@ using namespace std;
 class  WoodlandCavalry : public Cavalry{
     public:
         WoodlandCavalry();
-        ~WoodlandCavalry();
+        virtual ~WoodlandCavalry();
         virtual void move();
         virtual  void attack();
 };

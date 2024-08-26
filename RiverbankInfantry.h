@@ -12,7 +12,7 @@ using namespace std;
 class  RiverbankInfantry : public Infantry{
     public:
         RiverbankInfantry();
-        ~RiverbankInfantry();
+        virtual ~RiverbankInfantry();
         virtual void move();
         virtual  void attack();
 };

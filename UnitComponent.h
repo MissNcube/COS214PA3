@@ -10,7 +10,7 @@ class UnitComponent{
     virtual ~UnitComponent();
     virtual void move() = 0;
     virtual void fight() = 0; 
-    virtual void add(UnitComponent* component);
-    virtual void remove(UnitComponent* component);
+    virtual void add(UnitComponent* component) =0;
+    virtual void remove(UnitComponent* component)=0;
 };
 #endif

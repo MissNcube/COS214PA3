@@ -20,7 +20,7 @@ using namespace std;
 class  RiverbankFactory : public LegionFactory{
     public:
         RiverbankFactory();
-        ~RiverbankFactory();
+        virtual ~RiverbankFactory();
         virtual Infantry*  createInfantry();
         virtual  Cavalry*   createCavalry();
         virtual  Artillery* createArtillery();

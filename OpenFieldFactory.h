@@ -21,7 +21,7 @@ using namespace std;
 class  OpenFieldFactory : public LegionFactory{
     public:
         OpenFieldFactory();
-        ~OpenFieldFactory();
+        virtual ~OpenFieldFactory();
         virtual Infantry*  createInfantry();
         virtual  Cavalry*   createCavalry();
         virtual  Artillery* createArtillery();

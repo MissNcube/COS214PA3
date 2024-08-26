@@ -13,7 +13,7 @@
 class WoodlandFactory : public LegionFactory {
 public:
     WoodlandFactory();
-    ~WoodlandFactory();
+    virtual ~WoodlandFactory();
     virtual Infantry* createInfantry();
     virtual Cavalry* createCavalry();
     virtual Artillery* createArtillery();
