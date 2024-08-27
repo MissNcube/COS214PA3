@@ -1,8 +1,8 @@
 #include "OpenFieldArtillery.h"
 #include "LegionUnit.h"
 
-OpenFieldArtillery::OpenFieldArtillery()
-{
+OpenFieldArtillery::OpenFieldArtillery(BattleStrategy* strat)
+    : Artillery(strat) {
     cout << "OpenField Artillery created " << endl;
 }
 OpenFieldArtillery::~OpenFieldArtillery()
@@ -36,10 +36,24 @@ int OpenFieldArtillery::getDefense() const
     // Return the defense value specific to OpenFieldArtillery
     return 20; // example value
 }
-void OpenFieldArtillery::displayUnitStats(string name) {
-    std::cout << "Unit Stats for : " << name << std::endl;
+void OpenFieldArtillery::displayUnitStats(const std::string& unitName) {
+    std::cout << "Unit Stats for : " << unitName << std::endl;
     // Display various unit statistics
     std::cout << "Health: " << getHealth() << std::endl;
     std::cout << "Damage: " << getDamage() << std::endl;
     std::cout << "Defense: " << getDefense() << std::endl;
+}
+
+void OpenFieldArtillery::fight() {
+    // Implementation
+}
+
+void OpenFieldArtillery::add(UnitComponent* component) {
+    // Implementation
+    (void)component;
+}
+
+void OpenFieldArtillery::remove(UnitComponent* component) {
+    // Implementation
+    (void)component;
 }

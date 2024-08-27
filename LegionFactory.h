@@ -6,17 +6,14 @@
 #include "Cavalry.h"
 #include "Artillery.h"
 #include "LegionUnit.h"
-
-class Infantry;
-class Cavalry;
-class Artillery;
-
+ 
 class LegionFactory {
 public:
+    LegionFactory();
     virtual LegionUnit* createInfantry() = 0;
     virtual LegionUnit* createCavalry() = 0;
     virtual LegionUnit* createArtillery() = 0;
-    virtual ~LegionFactory() = default;
+    //virtual ~LegionFactory() = default;
 };
 
 #endif // LEGION_FACTORY_H

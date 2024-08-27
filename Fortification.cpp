@@ -15,11 +15,13 @@ bool Fortification::requiresStealth() const
 void Fortification::executeMovement(LegionUnit *unit) 
 {
     // Fortification movement logic
+    (void)unit;
     std::cout << "Fortification movement executed." << std::endl;
 }
 
 void Fortification::executeAttack(LegionUnit *unit) 
 {
     // Fortification attack logic
+    (void)unit;
     std::cout << "Fortification attack executed." << std::endl;
 }

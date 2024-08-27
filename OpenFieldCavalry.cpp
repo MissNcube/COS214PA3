@@ -1,7 +1,8 @@
 #include "OpenFieldCavalry.h"
 #include "LegionUnit.h"
 
-OpenFieldCavalry::OpenFieldCavalry()
+OpenFieldCavalry::OpenFieldCavalry(BattleStrategy* strat)
+    : Cavalry(strat) 
 {
     cout << "OpenField Cavalry created " << endl;
 }
@@ -42,4 +43,19 @@ void OpenFieldCavalry::displayUnitStats(string name) {
     std::cout << "Health: " << getHealth() << std::endl;
     std::cout << "Damage: " << getDamage() << std::endl;
     std::cout << "Defense: " << getDefense() << std::endl;
+}
+
+// new functions
+void OpenFieldCavalry::fight() {
+    // Implementation for OpenFieldCavalry
+}
+
+void OpenFieldCavalry::add(UnitComponent* component) {
+    // Implementation
+    (void)component;
+}
+
+void OpenFieldCavalry::remove(UnitComponent* component) {
+    // Implementation
+    (void)component;
 }

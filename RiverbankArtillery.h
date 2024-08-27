@@ -11,13 +11,18 @@ using namespace std;
 class RiverbankArtillery : public Artillery
 {
 public:
-    RiverbankArtillery();
+    //RiverbankArtillery();
     ~RiverbankArtillery();
+    RiverbankArtillery(BattleStrategy* strat);
     virtual void move();
     virtual void attack();
-    int getHealth() const override;
-    int getDamage() const override;
-    int getDefense() const override;
+    int getHealth() const;
+    int getDamage() const;
+    int getDefense() const;
     void displayUnitStats(string name);
+    void fight() override; // Implement pure virtual function
+    void add(UnitComponent* component) override; // Implement pure virtual function
+    void remove(UnitComponent* component) override; // Implement pure virtual function
+    
 };
 #endif

@@ -1,7 +1,10 @@
 #include "RiverbankInfantry.h"
 #include "LegionUnit.h"
+#include "BattleStrategy.h"
+#include "Infantry.h"
 
-RiverbankInfantry::RiverbankInfantry()
+RiverbankInfantry::RiverbankInfantry(BattleStrategy* strat)
+    : Infantry(strat)
 {
     cout << "Riverbank Infantry created "<< endl;
 }
@@ -42,4 +45,16 @@ void RiverbankInfantry::displayUnitStats(string name) {
     std::cout << "Health: " << getHealth() << std::endl;
     std::cout << "Damage: " << getDamage() << std::endl;
     std::cout << "Defense: " << getDefense() << std::endl;
+}
+
+void RiverbankInfantry::fight() {
+    // Implementation of fight
+}
+
+void RiverbankInfantry::add(UnitComponent* component) {
+    // Implementation of add
+}
+
+void RiverbankInfantry::remove(UnitComponent* component) {
+    // Implementation of remove
 }

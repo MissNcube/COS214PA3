@@ -6,7 +6,7 @@ using namespace std;
 
 #include "UnitComponent.h"
 
-class UnitComponent;
+//class UnitComponent;
 
 class Legion : public UnitComponent{
 

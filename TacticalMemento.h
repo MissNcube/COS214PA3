@@ -2,8 +2,12 @@
 #define TACTICALMEMENTO_H
 
 #include "BattleStrategy.h"
+#include "LegionUnit.h"
 
-class TacticalMemento {
+class LegionUnit;
+class BattleStrategy;
+
+class TacticalMemento{
 private:
     BattleStrategy* storedStrategy;
 public:

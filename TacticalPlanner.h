@@ -2,8 +2,11 @@
 #define TACTICALPLANNER_H
 
 #include "BattleStrategy.h"
+#include "LegionUnit.h"
 #include "TacticalMemento.h"
 #include <vector>
+
+class LegionUnit;
 
 class TacticalPlanner {
 private:

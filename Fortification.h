@@ -4,12 +4,14 @@
 #include "BattleStrategy.h"
 #include "LegionUnit.h"
 
+class LegionUnit;
+
 class Fortification : public BattleStrategy {
 public:
-    void engage() override;
-    bool requiresStealth() const override;
-    void executeMovement(LegionUnit* unit) override;
-    void executeAttack(LegionUnit* unit) override;
+    void engage();
+    bool requiresStealth() const;
+    void executeMovement(LegionUnit* unit);
+    void executeAttack(LegionUnit* unit);
 };
 
 #endif // FORTIFICATION_H

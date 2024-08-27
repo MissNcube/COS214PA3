@@ -6,6 +6,9 @@
 #include "UnitComponent.h"
 #include <vector>
 
+// class LegionUnit;
+// class UnitComponent;
+
 class TacticalCommand {
 private:
     BattleStrategy* strategy;

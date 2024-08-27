@@ -16,11 +16,13 @@ bool Flanking::requiresStealth() const
 void Flanking::executeMovement(LegionUnit *unit) 
 {
     // Flanking movement logic
+    (void)unit;
     std::cout << "Flanking movement executed." << std::endl;
 }
 
 void Flanking::executeAttack(LegionUnit *unit) 
 {
     // Flanking attack logic
+    (void)unit;
     std::cout << "Flanking attack executed." << std::endl;
 }

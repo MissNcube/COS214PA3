@@ -1,22 +1,52 @@
+// #ifndef ARTILLERY_H
+// #define ARTILLERY_H
+// #include <iostream>
+// #include "BattleStrategy.h"
+// #include "LegionUnit.h"
+// #include "UnitComponent.h"
+// using namespace std;
+
+// class BattleStrategy;
+
+// class Artillery : public UnitComponent, public LegionUnit{
+//     private:
+//         BattleStrategy* strategy;
+//     public:
+//         Artillery();
+//         ~Artillery();
+//         Artillery(BattleStrategy* strat);
+//         void move() override;
+//         void displayUnitStats(string name)override;
+// };
+// #endif
+
 #ifndef ARTILLERY_H
 #define ARTILLERY_H
-#include <iostream>
-using namespace std;
-#include "LegionUnit.h"
+
 #include "UnitComponent.h"
+#include "LegionUnit.h"
+#include "BattleStrategy.h"
 
-class LegionUnit;
-class UnitComponent;
+class Artillery : public UnitComponent, public LegionUnit {
+private:
+    BattleStrategy* strategy;
 
-class Artillery : public LegionUnit, public UnitComponent{
-    private:
-        BattleStrategy* strategy;
-    public:
-        Artillery();
-        ~Artillery();
-        Artillery(BattleStrategy* strat);
-        virtual void move() override;
-        virtual void attack() override;
-        virtual void displayUnitStats(string name);
+public:
+    Artillery();
+    Artillery(BattleStrategy* strat) : strategy(strat) {}
+
+    void move() override {
+        strategy->executeMovement(this);
+    }
+
+    void attack() override {
+        strategy->executeAttack(this);
+    }
+
+    virtual void displayUnitStats(const std::string& unitName) override {
+        // Implement the display logic here
+        (void)unitName;
+    }
 };
-#endif
+
+#endif // ARTILLERY_H

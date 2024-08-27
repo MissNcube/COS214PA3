@@ -1,4 +1,6 @@
 #include "Legion.h"
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 Legion::Legion()
@@ -19,7 +21,8 @@ void Legion::add(UnitComponent* component)
 void Legion::remove(UnitComponent* component)
 {
      cout << "Removing "<< component << endl;
-    auto it = std::find(units.begin(), units.end(), component);
+    auto it = std::find_if(units.begin(), units.end(),
+                           [&component](UnitComponent* u) { return u == component; });
     if (it != units.end()) {
         units.erase(it);
     }

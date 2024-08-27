@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "LegionFactory.h"
 #include "RiverbankFactory.h"
 #include "WoodlandFactory.h"

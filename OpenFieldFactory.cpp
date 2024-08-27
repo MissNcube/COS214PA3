@@ -3,6 +3,7 @@
 #include "Cavalry.h"
 #include "Artillery.h"
 #include "LegionUnit.h"
+#include "Flanking.h" 
 
 OpenFieldFactory::OpenFieldFactory()
 {
@@ -16,12 +17,16 @@ LegionUnit* OpenFieldFactory::createInfantry() {
     return new OpenFieldInfantry();
 }
 
+BattleStrategy* someStrategy = new Flanking();
+
 LegionUnit* OpenFieldFactory::createCavalry() {
-    return new OpenFieldCavalry();
+    BattleStrategy* someStrategy = new Flanking(); // Now should be recognized
+    return new OpenFieldCavalry(someStrategy);
 }
 
 LegionUnit* OpenFieldFactory::createArtillery() {
-    return new OpenFieldArtillery();
+    BattleStrategy* someStrategy = new Flanking(); // Now should be recognized
+    return new OpenFieldArtillery(someStrategy);
 }
 
 void OpenFieldFactory::deployArtillery()
