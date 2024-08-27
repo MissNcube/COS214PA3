@@ -3,12 +3,10 @@
 #include <iostream>
 using namespace std;
 #include "LegionUnit.h"
-#include "UnitComponent.h"
 
 class LegionUnit;
-class UnitComponent;
 
-class Infantry : public LegionUnit, public UnitComponent{
+class Infantry : public LegionUnit{
     private:
         BattleStrategy* strategy;
 
@@ -18,6 +16,5 @@ class Infantry : public LegionUnit, public UnitComponent{
         Infantry(BattleStrategy* strat);
         void move() override;
         void attack() override;
-        virtual void displayUnitStats(string unitName);
 };
 #endif
