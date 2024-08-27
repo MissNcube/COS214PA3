@@ -12,12 +12,16 @@ class OpenFieldInfantry : public Infantry
 {
 public:
     OpenFieldInfantry();
+    OpenFieldInfantry(BattleStrategy* strat);
     virtual ~OpenFieldInfantry();
     virtual void move();
     virtual void attack();
-    int getHealth() const override;
-    int getDamage() const override;
-    int getDefense() const override;
+    int getHealth() const;
+    int getDamage() const;
+    int getDefense() const;
+    void fight() override;
+    void add(UnitComponent* component) override;
+    void remove(UnitComponent* component) override;
     void displayUnitStats(string name);
 };
 #endif

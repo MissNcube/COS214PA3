@@ -18,9 +18,9 @@ public:
     ~WoodlandInfantry();
     virtual void move();
     virtual void attack();
-    int getHealth() const override;
-    int getDamage() const override;
-    int getDefense() const override;
+    int getHealth() const;
+    int getDamage() const;
+    int getDefense() const;
     void displayUnitStats(string name);
 };
 #endif

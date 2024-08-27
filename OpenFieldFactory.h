@@ -11,10 +11,8 @@
 #include "OpenFieldInfantry.h"
 #include "OpenFieldCavalry.h"
 #include "OpenFieldArtillery.h"
-
-
-class LegionFactory;
-
+#include "BattleStrategy.h"
+#include "LegionUnit.h"
 #include <iostream>
 using namespace std;
 

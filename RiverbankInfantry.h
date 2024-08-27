@@ -15,9 +15,14 @@ public:
     ~RiverbankInfantry();
     virtual void move();
     virtual void attack();
-    int getHealth() const override;
-    int getDamage() const override;
-    int getDefense() const override;
+    int getHealth() const;
+    int getDamage() const;
+    int getDefense() const;
     void displayUnitStats(string name);
+    RiverbankInfantry(BattleStrategy* strat); // Constructor declaration
+    void fight() override; // Implement pure virtual function
+    void add(UnitComponent* component) override; // Implement pure virtual function
+    void remove(UnitComponent* component) override; // Implement pure virtual function
+    
 };
 #endif

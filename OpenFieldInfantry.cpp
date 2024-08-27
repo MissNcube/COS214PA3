@@ -1,7 +1,8 @@
 #include "OpenFieldInfantry.h"
 #include "LegionUnit.h"
 
-OpenFieldInfantry::OpenFieldInfantry()
+OpenFieldInfantry::OpenFieldInfantry(BattleStrategy* strat)
+    : Infantry(strat)
 {
     cout << "OpenField Infantry created "<< endl;
 }
@@ -36,4 +37,17 @@ void OpenFieldInfantry::displayUnitStats(string name) {
     std::cout << "Health: " << getHealth() << std::endl;
     std::cout << "Damage: " << getDamage() << std::endl;
     std::cout << "Defense: " << getDefense() << std::endl;
+}
+
+// new functions
+void OpenFieldInfantry::fight() {
+    // Provide the actual fight logic here
+}
+
+void OpenFieldInfantry::add(UnitComponent* component) {
+    // Provide the logic to add a component here, if needed
+}
+
+void OpenFieldInfantry::remove(UnitComponent* component) {
+    // Provide the logic to remove a component here, if needed
 }

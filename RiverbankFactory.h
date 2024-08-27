@@ -10,13 +10,10 @@
 #include "RiverbankInfantry.h"
 #include "RiverbankCavalry.h"
 #include "RiverbankArtillery.h"
+#include "BattleStrategy.h"
 #include "LegionUnit.h"
-
-class LegionFactory;
-
 #include <iostream>
 using namespace std;
-
 
 class  RiverbankFactory : public LegionFactory{
     public:
