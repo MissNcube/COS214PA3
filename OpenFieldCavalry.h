@@ -5,7 +5,7 @@
 #include <iostream>
 
 using namespace std;
-
+class Cavalry;
 class OpenFieldCavalry : public Cavalry
 {
 public:

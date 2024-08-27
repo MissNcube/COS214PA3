@@ -14,7 +14,8 @@ OpenFieldFactory::~OpenFieldFactory()
     cout << "OpenField Factory destroyed " << endl;
 }
 LegionUnit* OpenFieldFactory::createInfantry() {
-    return new OpenFieldInfantry();
+    BattleStrategy* someStrategy = new Flanking(); // Now should be recognized
+    return new OpenFieldInfantry(someStrategy);
 }
 
 BattleStrategy* someStrategy = new Flanking();
